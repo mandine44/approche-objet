@@ -18,4 +18,30 @@ public class Personne {
 		this.prenom=prenom;
 		this.adresse= adresse;
 	}
+	
+	public void affiche() {
+		System.out.println ("Nom:" +nom.toUpperCase() + "\nPrenom: "+ prenom);
+	}
+	
+	public void changeNom (String nouveauNom) {
+		this.nom = nouveauNom;
+	}
+	
+	public void changePrenom (String nouveauPrenom) {
+		this.prenom = nouveauPrenom;
+	}
+	
+	public void changeAdresse (AdressePostale nouvelleAdresse) {
+		this.adresse = nouvelleAdresse;
+	}
+	
+	public String getNom() {
+		return nom;
+	}
+	public String getPrenom() {
+		return prenom;
+	}
+	public AdressePostale getAdresse() {
+		return adresse;
+	}
 }
