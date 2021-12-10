@@ -2,24 +2,16 @@ package entities;
 import entites2.Personne;
 
 public class TestPersonne {
+	AdressePostale adresse1 = new AdressePostale(5, "de la paix", 44200, "Coueron");
+	AdressePostale adresse2 = new AdressePostale(7, "rue des fetes", 75000, "Paris");
+	
 
 	public static void main(String[] args) {
-		Personne personne1 = new Personne();
-		Personne personne2 = new Personne();
+		AdressePostale adresse1 = new AdressePostale(5, "de la paix", 44200, "Coueron");
+		AdressePostale adresse2 = new AdressePostale(7, "rue des fetes", 75000, "Paris");
+		Personne personne1 = new Personne("Huret", "Amandine", adresse1);
+		Personne personne2 = new Personne("Tralala", "Pedro", adresse2);
 		
-		personne1.nom = "Huret";
-		personne1.prenom = "Amandine";
-		personne1.adresse.numeroRue =5;
-		personne1.adresse.Rue = "rue Anatole france";
-		personne1.adresse.codePostal = 44220;
-		personne1.adresse.Ville = "Coueron";
-		
-		personne2.nom = "Pedro";
-		personne2.prenom = "Tralala";
-		personne2.adresse.numeroRue =12;
-		personne2.adresse.Rue = "rue des fleurs";
-		personne2.adresse.codePostal = 45000;
-		personne2.adresse.Ville = "Tartenpion";
 		
 	}
 
