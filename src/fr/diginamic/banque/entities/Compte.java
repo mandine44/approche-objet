@@ -8,5 +8,9 @@ public class Compte {
 		numeroCompte = numero;
 		soldeCompte = solde;
 	}
+	
+	public String toString() {
+		return ("numero de compte: "+ numeroCompte + "\n solde: "+ soldeCompte);
+	}
 
 }
