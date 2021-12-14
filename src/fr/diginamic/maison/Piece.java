@@ -13,5 +13,8 @@ public Piece(double superficie, int etage) {
 		this.superficie = superficie;
 	this.etage = etage;}
 }
+public String toString() {
+	return this.getClass().toString();
+}
 
 }

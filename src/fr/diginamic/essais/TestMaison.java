@@ -62,16 +62,17 @@ public class TestMaison {
 		System.out.println("superficie de l etage 1:" + maMaison.superficieEtage(1));
 		System.out.println();
 		
+		System.out.println("tablength dans testmamaison :"+maMaison.tabPiece.length);
 		
 		maMaison.ajouterPiece(null);
 		System.out.println("ajout de piece nulle");
 	
-		Chambre chambre3= new Chambre(-40,1);
+		//Chambre chambre3= new Chambre(-40,1);
 		
-		maMaison.ajouterPiece(chambre3);
-		System.out.println("ajout de chambre negative");
+		//maMaison.ajouterPiece(chambre3);
+		//System.out.println("ajout de chambre negative");
 
-		
+		//System.out.println("superficie totale des chambres :" + maMaison.superficieParType(chambre1));
 	}
 
 }
