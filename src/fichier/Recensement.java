@@ -141,6 +141,7 @@ public class Recensement {
 				Region iDF = new Region("Île-de-France\t", 0);
 				listRegions.add(iDF);
 
+				// Je remplis le champ NbHabitantsRegion pour chaque Region
 				for (int i = 0; i < listRegions.size(); i++) {
 
 					Region r = listRegions.get(i);
@@ -152,7 +153,11 @@ public class Recensement {
 					}
 				}
 
+				// Je trie ma liste
+
 				listRegions.sort(new ComparatorHabRegion());
+
+				// J'affiche les 10 dernieres entrées de la liste
 
 				System.out.println("Les 10 regions les plus peuplées sont: ");
 				for (int i = listRegions.size() - 1; i >= 2; i--) {
@@ -167,6 +172,75 @@ public class Recensement {
 				break;
 
 			case 5: // afficher les 10 départements les plus peuplés
+
+				List<Departement> listDepartements = new ArrayList<Departement>();
+
+				for (int i = 0; i < 95; i++) {
+					listDepartements.add(new Departement(i + 1, 0));
+					// System.out.println(listDepartements.get(i).getCodeDep());
+				}
+				listDepartements.add(new Departement(971, 0));
+				listDepartements.add(new Departement(972, 0));
+				listDepartements.add(new Departement(973, 0));
+				listDepartements.add(new Departement(974, 0));
+
+				// Je remplis le champ NbHabitantsRegion pour chaque Region
+
+				Iterator<String> iterateur3 = propre.iterator();
+
+				iterateur3.next();
+
+				while (iterateur3.hasNext()) {
+
+					String s = iterateur3.next();
+					String[] token = s.split("\t");
+
+					for (Departement d : listDepartements) {
+
+						if (Integer.parseInt(token[2]) == d.getCodeDep())
+							;
+
+						{
+							d.setNbHabitantsDep(d.getNbHabitantsDep() + Integer.parseInt(token[9]));
+						}
+					}
+				}
+
+				// Je trie ma liste
+
+				/*
+				 * listDepartements.sort(new ComparatorHabDep());
+				 * 
+				 * // J'affiche les 10 dernieres entrées de la liste
+				 * 
+				 * System.out.println("Les 10 départements les plus peuplés sont: "); for (int i
+				 * = listDepartements.size() - 1; i >= 2; i--) {
+				 * 
+				 * Departement r = listDepartements.get(i);
+				 * 
+				 * System.out.println(r.getCodeDep());
+				 * System.out.println(r.getNbHabitantsDep());
+				 * 
+				 * }
+				 */
+
+				/*
+				 * Iterator<String> iterateur3 = propre.iterator();
+				 * 
+				 * String s = iterateur3.next();
+				 * 
+				 * while (iterateur3.hasNext()) { s = iterateur3.next();
+				 * 
+				 * String[] token = s.split("\t"); boolean dejala = false;
+				 * 
+				 * for (int i = 0; i < listDepartements.size() - 1; i++) { Departement d =
+				 * listDepartements.get(i); System.out.println("token[2] =" + token[2] +
+				 * " d.getCodeDep()= "+ d.getCodeDep()); if (token[2] == d.getCodeDep()) {
+				 * dejala = true; } } if (dejala == false) { listDepartements.add(new
+				 * Departement(token[2], 0)); }
+				 * 
+				 * }
+				 */
 
 				break;
 
