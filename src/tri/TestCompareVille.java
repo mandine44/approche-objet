@@ -18,15 +18,15 @@ public class TestCompareVille {
 		villes.add(new Ville("Pau", 77200));
 		villes.add(new Ville("Marseille", 850700));
 		villes.add(new Ville("Tarbes", 40600));
-		
-		//Collections.sort(villes);
-		
-		//Collections.sort(villes, new ComparatorHabitant());
-		
+
+		// Collections.sort(villes);
+
+		// Collections.sort(villes, new ComparatorHabitant());
+
 		Collections.sort(villes, new ComparatorNom());
-		
+
 		for (Ville v : villes) {
-			System.out.println(v.nom);
+			System.out.println(v.getNom());
 		}
 	}
 

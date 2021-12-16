@@ -3,9 +3,9 @@ package listes;
 import fr.diginamic.testenumeration.Continent;
 
 public class Ville implements Comparable<Ville> {
-	public String nom;
-	public int nbHabitants;
-	Continent continent;
+	private String nom;
+	private int nbHabitants;
+	private Continent continent;
 
 	public Ville(String nom, int nbHabitants) {
 

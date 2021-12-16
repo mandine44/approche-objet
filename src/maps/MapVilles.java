@@ -18,26 +18,26 @@ public class MapVilles {
 		mapVilles.put("Marseille", new Ville("Marseille", 850700));
 		mapVilles.put("Tarbes", new Ville("Tarbes", 40600));
 
-		//Recherche de la plus petite ville
-		
+		// Recherche de la plus petite ville
+
 		int nbMinHabitants = 1000000000;
-		String clePlusPetiteVille="";
+		String clePlusPetiteVille = "";
 		Iterator<String> keysIte = mapVilles.keySet().iterator();
-		
+
 		while (keysIte.hasNext()) {
 
 			String cle = keysIte.next();
-			if (mapVilles.get(cle).nbHabitants < nbMinHabitants) {
-				nbMinHabitants = mapVilles.get(cle).nbHabitants;
-				clePlusPetiteVille= cle;
+			if (mapVilles.get(cle).getNbHabitants() < nbMinHabitants) {
+				nbMinHabitants = mapVilles.get(cle).getNbHabitants();
+				clePlusPetiteVille = cle;
 			}
 
 		}
-		//System.out.println("Plus petite ville: "+ mapVilles.get(clePlusPetiteVille).nom);
-		
+		// System.out.println("Plus petite ville: "+
+		// mapVilles.get(clePlusPetiteVille).nom);
+
 		mapVilles.remove(clePlusPetiteVille);
-		
-	
+
 		Iterator<String> keysIte1 = mapVilles.keySet().iterator();
 		while (keysIte1.hasNext()) {
 			String cle = keysIte1.next();
