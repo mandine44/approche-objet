@@ -37,68 +37,62 @@ public class TestSetObjet {
 		setPays.add(Inde);
 
 		/*
-		 * //Recherche du Pays avec le PIB /habitant le plus elevé Iterator <Pays>iter =
+		 * //Recherche du Pays avec le PIB /habitant le plus elevï¿½ Iterator <Pays>iter =
 		 * setPays.iterator(); int maxPIB = 0; Pays paysPIBMax = new Pays ("", 0, 0);
 		 * 
 		 * while (iter.hasNext()) { Pays unPays = (Pays) iter.next(); if (maxPIB <
 		 * unPays.PIB) { maxPIB = unPays.PIB; paysPIBMax = unPays; }
 		 * 
-		 * } System.out.println("Pays dont le PIB par habitant est le plus elevé: " +
+		 * } System.out.println("Pays dont le PIB par habitant est le plus elevï¿½: " +
 		 * paysPIBMax.nom);
 		 */
 
-		
 		/*
-		// Recherche du Pays avec le PIB total le plus elevé
+		 * // Recherche du Pays avec le PIB total le plus elevï¿½ Iterator<Pays> iter =
+		 * setPays.iterator();
+		 * 
+		 * double maxPIBtotal = 0; Pays paysPIBMaxTotal = new Pays("", 0, 0);
+		 * 
+		 * while (iter.hasNext()) { Pays unPays = (Pays) iter.next();
+		 * 
+		 * if (maxPIBtotal < (unPays.PIB * unPays.nbHabitants)) { maxPIBtotal =
+		 * (unPays.PIB * unPays.nbHabitants); paysPIBMaxTotal = unPays; }
+		 * 
+		 * } System.out.println("Pays dont le PIB total est le plus elevï¿½: " +
+		 * paysPIBMaxTotal.nom);
+		 */
+
+		// Mise en majuscule du Pays avec le PIB total le plus bas
 		Iterator<Pays> iter = setPays.iterator();
 
-		double maxPIBtotal = 0;
-		Pays paysPIBMaxTotal = new Pays("", 0, 0);
+		long minPIBtotal = 100000000000000000l;
+		Pays paysPIBMinTotal = new Pays("", 0, 0);
 
 		while (iter.hasNext()) {
-			Pays unPays = (Pays) iter.next();
+			Pays unPays = iter.next();
 
-			if (maxPIBtotal < (unPays.PIB * unPays.nbHabitants)) {
-				maxPIBtotal = (unPays.PIB * unPays.nbHabitants);
-				paysPIBMaxTotal = unPays;
+			if (minPIBtotal > (unPays.getPIB() * unPays.getNbHabitants())) {
+				minPIBtotal = (unPays.getPIB() * unPays.getNbHabitants());
+				paysPIBMinTotal = unPays;
 			}
 
 		}
-		System.out.println("Pays dont le PIB total est le plus elevé: " + paysPIBMaxTotal.nom); */
+		String nomMaj = paysPIBMinTotal.getNom().toUpperCase();
+		paysPIBMinTotal.setNom(nomMaj);
 
-		
-		// Mise en majuscule du Pays avec le PIB total le plus bas
-				Iterator<Pays> iter = setPays.iterator();
-
-				long minPIBtotal = 100000000000000000l;
-				Pays paysPIBMinTotal = new Pays("", 0, 0);
-
-				while (iter.hasNext()) {
-					Pays unPays = (Pays) iter.next();
-
-					if (minPIBtotal > (unPays.PIB * unPays.nbHabitants)) {
-						minPIBtotal = (unPays.PIB * unPays.nbHabitants);
-						paysPIBMinTotal = unPays;
-					}
-
-				}
-				String nomMaj= paysPIBMinTotal.nom.toUpperCase();
-				paysPIBMinTotal.nom=nomMaj;
-				
-				
 		// affichage des differents Pays et de leurs attributs
 		for (Pays p : setPays) {
-			System.out.println(p.nom + "\t" + p.nbHabitants + "\t" + p.PIB);
-			
+			System.out.println(p.getNom() + "\t" + p.getNbHabitants() + "\t" + p.getPIB());
+
 		}
-		
+
 		System.out.println();
-			//Je supprime le pays dont le PIB est le plus petit
-			setPays.remove(paysPIBMinTotal);
-			
-			for (Pays p : setPays) {
-				System.out.println(p.nom + "\t" + p.nbHabitants + "\t" + p.PIB);
-			
+		// Je supprime le pays dont le PIB est le plus petit
+		setPays.remove(paysPIBMinTotal);
+
+		for (Pays p : setPays) {
+			System.out.println(p.getNom() + "\t" + p.getNbHabitants() + "\t" + p.getPIB());
+
 		}
 	}
 

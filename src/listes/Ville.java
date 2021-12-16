@@ -7,6 +7,11 @@ public class Ville implements Comparable<Ville> {
 	private int nbHabitants;
 	private Continent continent;
 
+	public Ville(String nom) {
+
+		this.nom = nom;
+	}
+
 	public Ville(String nom, int nbHabitants) {
 
 		this.nom = nom;
