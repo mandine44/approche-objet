@@ -184,7 +184,7 @@ public class Recensement {
 				listDepartements.add(new Departement(973, 0));
 				listDepartements.add(new Departement(974, 0));
 
-				// Je remplis le champ NbHabitantsRegion pour chaque Region
+				// Je remplis le champ NbHabitantsRegion pour chaque Departement
 
 				Iterator<String> iterateur3 = propre.iterator();
 
@@ -197,10 +197,7 @@ public class Recensement {
 
 					for (Departement d : listDepartements) {
 
-						if (Integer.parseInt(token[2]) == d.getCodeDep())
-							;
-
-						{
+						if (token[2].equals(String.valueOf(d.getCodeDep()))) {
 							d.setNbHabitantsDep(d.getNbHabitantsDep() + Integer.parseInt(token[9]));
 						}
 					}
@@ -208,22 +205,21 @@ public class Recensement {
 
 				// Je trie ma liste
 
-				/*
-				 * listDepartements.sort(new ComparatorHabDep());
-				 * 
-				 * // J'affiche les 10 dernieres entrées de la liste
-				 * 
-				 * System.out.println("Les 10 départements les plus peuplés sont: "); for (int i
-				 * = listDepartements.size() - 1; i >= 2; i--) {
-				 * 
-				 * Departement r = listDepartements.get(i);
-				 * 
-				 * System.out.println(r.getCodeDep());
-				 * System.out.println(r.getNbHabitantsDep());
-				 * 
-				 * }
-				 */
+				listDepartements.sort(new ComparatorHabDep());
 
+				// J'affiche les 10 dernieres entrées de la liste
+
+				System.out.println("Les 10 départements les plus peuplés sont: ");
+				for (int i = listDepartements.size() - 1; i >= 89; i--) {
+
+					Departement r = listDepartements.get(i);
+					System.out.println(r.getCodeDep());
+					// System.out.println(r.getNbHabitantsDep());
+				}
+
+				break;
+
+			case 6: // afficher les 10 villes les plus peuplées d'un département
 				/*
 				 * Iterator<String> iterateur3 = propre.iterator();
 				 * 
@@ -241,11 +237,6 @@ public class Recensement {
 				 * 
 				 * }
 				 */
-
-				break;
-
-			case 6: // afficher les 10 villes les plus peuplées d'un département
-
 				break;
 
 			case 7: // afficher les 10 villes les plus peuplées d'une region
@@ -265,5 +256,4 @@ public class Recensement {
 		}
 
 	}
-
 }
