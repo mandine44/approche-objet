@@ -24,8 +24,7 @@ public class Recensement {
 		Path pathOrigine = Paths.get("C:/Users/amand/Documents/tempDIGI/recensement.csv");
 		List<String> lines = Files.readAllLines(pathOrigine, StandardCharsets.UTF_8);
 
-		// Creation d'une liste "propre" visible dans un fichier de sortie pour faire la
-		// suite du TP
+		// Creation d'une liste "propre"
 
 		List<String> propre = new ArrayList<String>();
 
@@ -37,6 +36,8 @@ public class Recensement {
 			propre.add(tokens[0] + "\t" + tokens[1] + "\t" + tokens[2] + "\t" + tokens[3] + "\t" + tokens[4] + "\t"
 					+ tokens[5] + "\t" + tokens[6] + "\t" + tokens[7] + "\t" + tokens[8] + "\t" + tokens[9]);
 		}
+
+		// Ecriture dans un fichier pour visu pour suite TP
 		// Path pathDestination =
 		// Paths.get("C:/Users/amand/Documents/tempDIGI/recensementpropre.csv");
 		// Files.write(pathDestination, propre, StandardCharsets.UTF_8);
